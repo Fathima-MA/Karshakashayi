@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<head>
+<title>Insert New Record</title>
+</head>
+<body>
+    <h1>Create or New Record Into Database</h1>
+    <h2>Python Django Web programimng</h2>
+    <hr/>
+    <form method ="POST" name="frmsum">
+        {% csrf_token %}
+    Name:<input type="text" placeholder="Enter The Name"name="name" required autocomplete="off" /><br/>
+    E-Mail:<input type="text" placeholder="Enter The Email ID"name="email" required autocomplete="off"/><br/>
+    Address:<input type="text" placeholder="Enter The address"name="address" required autocomplete="off" /><br/>
+    Phone:<input type="integer" placeholder="Enter The phone no"name="phone" required autocomplete="off" /><br/>
+    Number of Workers Required:<input type="integer" placeholder="Enter The Number of Employees Needed" name="noemp" required autocomplete="off"/><br/>
+    Date:<input type="date" class="form-control" id="inputDate" placeholder="Enter Required Date"name="date" required autocomplete="off"/><br/>
+    <input type="button" value="Calculate Total" onclick="total()">
+
+    
+    <h2>Calculations</h2>
+    <div class="row">
+        <div class="form-group col">
+          <label for="workercount">Given Count</label>
+          <input type="number" Name="givencount">
+        </div>
+        <div class="form-group col">
+          <label for="totalprice" >Total Price </label>
+        <input type="number" name="txtsum">
+        <script Language="javascript">
+        function total()
+        {
+          var count,price,Total;
+          count=document.frmsum.noemp.value;
+          price=400;
+          Total=count * price;
+          document.frmsum.givencount.value=count;
+          document.frmsum.txtsum.value=Total;
+        }
+        </script>
+
+        </div>
+      </div>
+      <div class="form-group text-center">
+
+        <button type="submit" class="btn color btn-lg ">Submit Request </button>  
+    </form>
+    <hr/>
+</head>
+</html>
